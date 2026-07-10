@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import { periods } from '../content/periods';
+import { rewildingScenes } from '../content/rewilding';
 import { SITE } from '../content/site';
+import type { MediaAsset } from '../content/types';
 import { useScrollReveal } from '../lib/useScrollReveal';
+import { ImageAttribution } from '../components/ImageAttribution';
 
 interface AggregatedRef {
   id: string;
@@ -27,9 +30,24 @@ function aggregateReferences(): AggregatedRef[] {
   return [...byId.values()].sort((a, b) => a.title.localeCompare(b.title));
 }
 
+/** Every image the app renders, de-duplicated by src. */
+function collectImages(): MediaAsset[] {
+  const all: MediaAsset[] = [];
+  for (const p of periods) {
+    if (p.keyImage) all.push(p.keyImage);
+    p.gallery?.forEach((g) => all.push(g));
+  }
+  for (const s of rewildingScenes) all.push(s.image);
+  const seen = new Set<string>();
+  return all.filter((img) => (seen.has(img.src) ? false : (seen.add(img.src), true)));
+}
+
 export function Sources() {
   const scope = useScrollReveal<HTMLDivElement>();
   const refs = aggregateReferences();
+  const images = collectImages();
+  const licensed = images.filter((img) => img.license);
+  const generated = images.filter((img) => !img.license && img.credit);
 
   return (
     <div ref={scope} className="page page--narrow">
@@ -62,6 +80,36 @@ export function Sources() {
           </ul>
         ) : (
           <p>References are being compiled and will appear here.</p>
+        )}
+      </section>
+
+      <section className="section" data-reveal aria-labelledby="image-credits-h">
+        <h2 id="image-credits-h">Image credits</h2>
+        {licensed.length > 0 && (
+          <>
+            <h3>Licensed photographs</h3>
+            <ul className="refList">
+              {licensed.map((img) => (
+                <li key={img.src}>
+                  {img.caption && <span>{img.caption}</span>}
+                  <span className="refList__meta">
+                    <ImageAttribution image={img} />
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+        {generated.length > 0 && (
+          <>
+            <h3>AI-generated images</h3>
+            <p>
+              Historical scenes for which no photograph can exist are AI
+              reconstructions/visualisations, not photographs. {generated.length}{' '}
+              such images are used across the site, each credited on the image
+              itself.
+            </p>
+          </>
         )}
       </section>
 

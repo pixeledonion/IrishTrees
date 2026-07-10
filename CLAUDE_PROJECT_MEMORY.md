@@ -116,8 +116,20 @@ local dev server; do not commit until the user asks.
   Note: `GPT_PROJECT_MEMORY.md` says app data should point at
   `…-v4-left-pines.png`, but `periods.ts` currently references the original
   `irish-trees-hero-atlantic-pinewood-grove.png` — Codex to reconcile.
-- **Wikimedia credits are placeholders** ("verify author/licence…"). Visible now;
-  Codex must swap in real Commons author + licence before public launch.
+- **Wikimedia attribution is now baked in** for the two in-use images. Added a
+  structured `ImageLicense` field to `MediaAsset` (`src/content/types.ts`), a
+  reusable `components/ImageAttribution.tsx` renderer, and an "Image credits"
+  section on `/sources`. The two Commons images in `periods.ts` now carry full
+  licence data (verified via the Commons API):
+  - `killarney-oakwood-lakes-view.jpg` — "Ladies View" by Ingo Mehling, CC BY-SA 3.0.
+  - `wild-nephin-blanket-bog-landscape.jpg` — "Ballycroy National Park…" by Youngbillyhappy, CC BY-SA 3.0.
+  The two unused Commons files, when placed by Codex, still need their licence
+  filled: `killarney-lakes-native-woodland.jpg` (Public domain) and
+  `scots-pine-mature-form.jpg` ("Skuleskogen pine" by Mickaël Delcey / Silverkey,
+  CC BY-SA 3.0 — Swedish location, Scots-pine form only, not Irish habitat).
+  Note: CC BY-SA is fine to *display* with credit; if any Commons image is edited,
+  set `license.modified: true` and release the edit under a compatible licence.
+  (I edited `periods.ts` — Codex's data lane — to insert the two `license` objects.)
 - **Home hero image** now pulls the first period's `keyImage` (late-glacial
   tundra) because every period has one. Can be pinned to the pinewood if preferred.
 - **Wildlife-kind badges use emoji** (🐝🐦🐸🦔🍄) in `GardenScene`; could swap for

@@ -6,6 +6,8 @@ import { useScrollReveal } from '../lib/useScrollReveal';
 import { StatusBadge } from '../components/StatusBadge';
 import { NotFound } from './NotFound';
 import { EcosystemScene } from '../components/EcosystemScene';
+import { ImageAttribution } from '../components/ImageAttribution';
+import { asset } from '../lib/asset';
 
 const KIND_LABEL: Record<SpeciesKind, string> = {
   tree: 'Trees',
@@ -119,11 +121,15 @@ export function PeriodDetail() {
           <div className="galleryGrid">
             {period.gallery.map((img) => (
               <figure className="plate" key={img.src}>
-                <img src={img.src} alt={img.alt} loading="lazy" />
-                {(img.caption || img.credit) && (
+                <img src={asset(img.src)} alt={img.alt} loading="lazy" />
+                {(img.caption || img.credit || img.license) && (
                   <figcaption>
                     {img.caption}
-                    {img.credit && <span className="plate__credit">{img.credit}</span>}
+                    {(img.credit || img.license) && (
+                      <span className="plate__credit">
+                        <ImageAttribution image={img} />
+                      </span>
+                    )}
                   </figcaption>
                 )}
               </figure>

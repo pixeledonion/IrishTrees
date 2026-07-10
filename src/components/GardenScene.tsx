@@ -4,6 +4,8 @@ import type {
   RewildingScene,
   SpeciesKind,
 } from '../content/types';
+import { asset } from '../lib/asset';
+import { ImageAttribution } from './ImageAttribution';
 
 const CATEGORY_COLOR: Record<HotspotCategory, string> = {
   landscape: '#9ec473',
@@ -55,12 +57,16 @@ export function GardenScene({ scene }: { scene: RewildingScene }) {
       </div>
 
       <div className="scene">
-        <img className="scene__image" src={img.src} alt={img.alt} loading="lazy" />
+        <img className="scene__image" src={asset(img.src)} alt={img.alt} loading="lazy" />
         <div className="scene__wash" aria-hidden="true" />
-        {(img.caption || img.credit) && (
+        {(img.caption || img.credit || img.license) && (
           <p className="scene__credit">
             {img.caption && <span className="scene__credit-line">{img.caption}</span>}
-            {img.credit && <span className="scene__credit-src">{img.credit}</span>}
+            {(img.credit || img.license) && (
+              <span className="scene__credit-src">
+                <ImageAttribution image={img} />
+              </span>
+            )}
           </p>
         )}
         {scene.hotspots.map((h) => (

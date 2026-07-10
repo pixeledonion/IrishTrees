@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Period } from '../content/types';
+import { asset } from '../lib/asset';
+import { ImageAttribution } from './ImageAttribution';
 
 interface Hotspot {
   id: string;
@@ -77,15 +79,19 @@ export function EcosystemScene({ period, index = 0, compact = false }: Ecosystem
     <div className={compact ? 'scene scene--compact' : 'scene'}>
       <img
         className="scene__image"
-        src={image}
+        src={asset(image)}
         alt={meta?.alt ?? ''}
         loading={index < 2 ? 'eager' : 'lazy'}
       />
       <div className="scene__wash" aria-hidden="true" />
-      {(meta?.caption || meta?.credit) && (
+      {meta && (meta.caption || meta.credit || meta.license) && (
         <p className="scene__credit">
-          {meta?.caption && <span className="scene__credit-line">{meta.caption}</span>}
-          {meta?.credit && <span className="scene__credit-src">{meta.credit}</span>}
+          {meta.caption && <span className="scene__credit-line">{meta.caption}</span>}
+          {(meta.credit || meta.license) && (
+            <span className="scene__credit-src">
+              <ImageAttribution image={meta} />
+            </span>
+          )}
         </p>
       )}
       {hotspots.map((spot) => (

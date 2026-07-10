@@ -209,7 +209,14 @@ export const periods: Period[] = [
         src: '/web-images/killarney-oakwood-lakes-view.jpg',
         alt: 'Modern Killarney landscape with lakes and native woodland.',
         caption: 'Modern Killarney gives a real-world reference for Atlantic woodland, lakes and humid western habitats.',
-        credit: 'Wikimedia Commons; verify author/licence before public launch.',
+        license: {
+          title: 'Ladies View',
+          author: 'Ingo Mehling',
+          licenseName: 'CC BY-SA 3.0',
+          licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0',
+          sourceName: 'Wikimedia Commons',
+          sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ladies_view.jpg',
+        },
       },
     ],
     references: [
@@ -270,7 +277,14 @@ export const periods: Period[] = [
         src: '/web-images/wild-nephin-blanket-bog-landscape.jpg',
         alt: 'Modern blanket bog landscape in Wild Nephin National Park, County Mayo.',
         caption: 'Modern blanket bog at Wild Nephin National Park.',
-        credit: 'Wikimedia Commons; verify author/licence before public launch.',
+        license: {
+          title: 'Ballycroy National Park from Nephin Beg Range',
+          author: 'Youngbillyhappy',
+          licenseName: 'CC BY-SA 3.0',
+          licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0',
+          sourceName: 'Wikimedia Commons',
+          sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ballycroy_National_Park_from_Nephin_Beg_Range,_July2012.jpg',
+        },
       },
     ],
     references: [

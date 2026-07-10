@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { SITE } from '../content/site';
 import { periods } from '../content/periods';
 import { formatSpan } from '../lib/format';
+import { asset } from '../lib/asset';
 import { useScrollReveal } from '../lib/useScrollReveal';
 
 const hero = periods.find((p) => p.keyImage)?.keyImage;
@@ -14,7 +15,7 @@ export function Home() {
       <section className="hero hero--immersive">
         <div className="hero__media">
           {hero && (
-            <img src={hero.src} alt={hero.alt} width={1672} height={941} />
+            <img src={asset(hero.src)} alt={hero.alt} width={1672} height={941} />
           )}
           <div className="hero__scrim" aria-hidden="true" />
         </div>

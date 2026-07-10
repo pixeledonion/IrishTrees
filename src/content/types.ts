@@ -32,13 +32,38 @@ export interface Habitat {
   description: string;
 }
 
+/**
+ * Structured attribution for a licensed image (e.g. Wikimedia Commons).
+ * Prefer this over the free-text `credit` for anything under a real licence so
+ * the UI can render a compliant, linked credit.
+ */
+export interface ImageLicense {
+  /** Work title as given on the source, e.g. "Ladies View". */
+  title?: string;
+  /** Creator, e.g. "Ingo Mehling". Omit for public-domain works with no named author. */
+  author?: string;
+  /** Human label, e.g. "CC BY-SA 3.0" or "Public domain". */
+  licenseName: string;
+  /** Link to the licence deed (omit for public domain). */
+  licenseUrl?: string;
+  /** Link to the source file page (e.g. the Commons page). */
+  sourceUrl?: string;
+  /** Where the file came from, e.g. "Wikimedia Commons". */
+  sourceName?: string;
+  /** True if the image has been altered from the original (share-alike note). */
+  modified?: boolean;
+}
+
 export interface MediaAsset {
   /** Path under /public, e.g. "/generated-images/foo.png". */
   src: string;
   /** Required for accessibility — describe the image, don't repeat the caption. */
   alt: string;
   caption?: string;
+  /** Free-text credit, e.g. AI-generation note. Use `license` for licensed works. */
   credit?: string;
+  /** Structured licence + attribution for CC / public-domain images. */
+  license?: ImageLicense;
 }
 
 export interface Reference {
