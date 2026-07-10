@@ -1,0 +1,119 @@
+[
+  {
+    "id": "irish-trees-hero-atlantic-pinewood-grove",
+    "file": "irish-trees-hero-atlantic-pinewood-grove.png",
+    "path": "/generated-images/irish-trees-hero-atlantic-pinewood-grove.png",
+    "period": "caledonian-pine-maximum",
+    "type": "ai-reconstruction",
+    "usage": "Original Caledonian Pine Maximum reconstruction, retained for comparison",
+    "note": "Generated for this project; represents an Atlantic pinewood grove, not a historical photograph."
+  },
+  {
+    "id": "irish-trees-hero-atlantic-pinewood-grove-v2",
+    "file": "irish-trees-hero-atlantic-pinewood-grove-v2.png",
+    "path": "/generated-images/irish-trees-hero-atlantic-pinewood-grove-v2.png",
+    "period": "caledonian-pine-maximum",
+    "type": "ai-reconstruction",
+    "usage": "Preferred Caledonian Pine Maximum timeline background; brighter and more open on the left",
+    "note": "Edited from the first generated pinewood image to preserve the right-side Scots pine, birch and rowan while reducing left-side darkness and crowding."
+  },
+  {
+    "id": "irish-trees-hero-atlantic-pinewood-grove-v3-birch-juniper",
+    "file": "irish-trees-hero-atlantic-pinewood-grove-v3-birch-juniper.png",
+    "path": "/generated-images/irish-trees-hero-atlantic-pinewood-grove-v3-birch-juniper.png",
+    "period": "caledonian-pine-maximum",
+    "type": "ai-reconstruction",
+    "usage": "Previous Caledonian Pine Maximum timeline background with added left-side birch and common juniper",
+    "note": "Edited from v2 to add downy/silver birch and common juniper to the open left-side pine-heath mosaic. Birch is strongly plausible from Betula evidence; species-level separation should be treated cautiously."
+  },
+  {
+    "id": "irish-trees-hero-atlantic-pinewood-grove-v4-left-pines",
+    "file": "irish-trees-hero-atlantic-pinewood-grove-v4-left-pines.png",
+    "path": "/generated-images/irish-trees-hero-atlantic-pinewood-grove-v4-left-pines.png",
+    "period": "caledonian-pine-maximum",
+    "type": "ai-reconstruction",
+    "usage": "Preferred Caledonian Pine Maximum timeline background with mature and young Scots pines added among the left-side birches",
+    "note": "Edited from v3 to add one mature Scots pine and scattered young Scots pines to the left-side pine-birch-heath mosaic while keeping the scene open."
+  },
+  {
+    "id": "late-glacial-pioneer-landscape",
+    "file": "late-glacial-pioneer-landscape.png",
+    "path": "/generated-images/late-glacial-pioneer-landscape.png",
+    "period": "late-glacial-pioneers",
+    "type": "ai-reconstruction",
+    "usage": "Late-glacial pioneer landscape timeline background",
+    "note": "Generated because no photograph exists for this period."
+  },
+  {
+    "id": "early-holocene-birch-hazel-woodland",
+    "file": "early-holocene-birch-hazel-woodland.png",
+    "path": "/generated-images/early-holocene-birch-hazel-woodland.png",
+    "period": "birch-hazel-colonisation",
+    "type": "ai-reconstruction",
+    "usage": "Early Holocene birch and hazel woodland timeline background",
+    "note": "Generated because no photograph exists for this early Holocene habitat state."
+  },
+  {
+    "id": "mid-holocene-oak-elm-alder-wildwood",
+    "file": "mid-holocene-oak-elm-alder-wildwood.png",
+    "path": "/generated-images/mid-holocene-oak-elm-alder-wildwood.png",
+    "period": "oak-alder-mixed-forest",
+    "type": "ai-reconstruction",
+    "usage": "Mid-Holocene mixed broadleaf wildwood timeline background",
+    "note": "Generated as a historical reconstruction; Killarney photos are retained as modern references."
+  },
+  {
+    "id": "late-holocene-blanket-bog-clearance",
+    "file": "late-holocene-blanket-bog-clearance.png",
+    "path": "/generated-images/late-holocene-blanket-bog-clearance.png",
+    "period": "blanket-bog-and-clearance",
+    "type": "ai-reconstruction",
+    "usage": "Blanket bog expansion and woodland opening timeline background",
+    "note": "Generated to avoid implying modern bog photos are direct historical records."
+  },
+  {
+    "id": "modern-garden-rewilding-pond",
+    "file": "modern-garden-rewilding-pond.png",
+    "path": "/generated-images/modern-garden-rewilding-pond.png",
+    "period": "present-and-rewilding",
+    "type": "ai-visualisation",
+    "usage": "Present-day garden rewilding timeline background and rewilding section",
+    "note": "Generated visualisation of a plausible native garden habitat."
+  },
+  {
+    "id": "rewilding-native-layers-garden",
+    "file": "rewilding-native-layers-garden.png",
+    "path": "/generated-images/rewilding-native-layers-garden.png",
+    "period": "present-and-rewilding",
+    "type": "ai-visualisation",
+    "usage": "Interactive Rewilding section: native layers scene",
+    "note": "Shows a plausible layered Irish garden habitat with native trees, shrubs, long grass and leaf litter."
+  },
+  {
+    "id": "rewilding-fish-free-wildlife-pond",
+    "file": "rewilding-fish-free-wildlife-pond.png",
+    "path": "/generated-images/rewilding-fish-free-wildlife-pond.png",
+    "period": "present-and-rewilding",
+    "type": "ai-visualisation",
+    "usage": "Interactive Rewilding section: fish-free wildlife pond scene",
+    "note": "Shows pond features and likely pond wildlife such as frogs and damselflies."
+  },
+  {
+    "id": "rewilding-deadwood-log-pile",
+    "file": "rewilding-deadwood-log-pile.png",
+    "path": "/generated-images/rewilding-deadwood-log-pile.png",
+    "period": "present-and-rewilding",
+    "type": "ai-visualisation",
+    "usage": "Interactive Rewilding section: deadwood and decay scene",
+    "note": "Shows deadwood, leaf litter, fungi and shaded cover as habitat for decomposers and sheltering wildlife."
+  },
+  {
+    "id": "rewilding-pollinator-meadow-hedge",
+    "file": "rewilding-pollinator-meadow-hedge.png",
+    "path": "/generated-images/rewilding-pollinator-meadow-hedge.png",
+    "period": "present-and-rewilding",
+    "type": "ai-visualisation",
+    "usage": "Interactive Rewilding section: pollinator meadow and hedge corridor scene",
+    "note": "Shows less-mown flowering grassland, native hedge structure and wildlife movement habitat."
+  }
+]

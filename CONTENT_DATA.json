@@ -1,0 +1,119 @@
+{
+  "project": {
+    "name": "IrishTrees",
+    "tagline": "Ireland's living ecosystems through time",
+    "summary": "Explore Ireland's changing native habitats from post-glacial forests to modern rewilding gardens."
+  },
+  "timeline": [
+    {
+      "id": "post_glacial_pioneer",
+      "title": "Post-Glacial Pioneer Landscapes",
+      "dateRange": "10,000-8,000 years ago",
+      "shortSummary": "Bare ground, lakes, wetlands and open scrub began to fill with pioneer plants as the ice retreated.",
+      "habitats": ["open ground", "young wetland", "scrub", "lake edge"],
+      "keyPlants": ["birch", "willow", "juniper", "sedges", "mosses"],
+      "wildlife": ["aquatic insects", "fish", "birds", "small mammals"],
+      "gardenLesson": "Create colonisation zones: bare soil, damp corners, logs, native shrubs and pond edges."
+    },
+    {
+      "id": "pine_birch_hazel",
+      "title": "Pine, Birch, Hazel And Early Wildwood",
+      "dateRange": "8,000-6,000 years ago",
+      "shortSummary": "Warmer early Holocene conditions supported expanding woodland, including pine, birch and hazel.",
+      "habitats": ["pine-birch woodland", "hazel scrub", "heath edge", "wet margin"],
+      "keyPlants": ["Scots pine", "birch", "hazel", "rowan", "heather", "bilberry"],
+      "wildlife": ["woodland birds", "insects", "fungi", "mosses", "lichens"],
+      "gardenLesson": "A small pine-birch-heath grove can echo ancient habitat structure without needing many trees."
+    },
+    {
+      "id": "atlantic_mixed_woodland",
+      "title": "Atlantic Mixed Woodland",
+      "dateRange": "6,000-5,000 years ago",
+      "shortSummary": "Ireland's woodlands became richer regional mosaics of oak, elm, hazel, alder, ash, birch, holly and rowan.",
+      "habitats": ["oak-hazel woodland", "wet woodland", "western oakwood", "woodland glade"],
+      "keyPlants": ["oak", "elm", "hazel", "alder", "ash", "holly", "rowan"],
+      "wildlife": ["woodland insects", "fungi", "birds", "bats", "amphibians"],
+      "gardenLesson": "Build layers: canopy, shrub, ground flora, deadwood, water and leaf litter."
+    },
+    {
+      "id": "neolithic_clearance",
+      "title": "Farming Arrives And Woodland Opens",
+      "dateRange": "5,000-3,000 years ago",
+      "shortSummary": "Neolithic farming introduced clearance, grazing, crops and more permanent human influence.",
+      "habitats": ["open woodland", "scrub", "grassland", "field edge"],
+      "keyPlants": ["oak", "hazel", "elm", "grasses", "wildflowers"],
+      "wildlife": ["edge insects", "pollinators", "birds", "small mammals"],
+      "gardenLesson": "Value sunny openings, rough grass, meadow strips, hedges and scrub as much as trees."
+    },
+    {
+      "id": "bog_heath_upland",
+      "title": "Bog, Heath And Upland Mosaics Expand",
+      "dateRange": "3,000-1,500 years ago",
+      "shortSummary": "Wetter conditions and land-use change helped peatlands, heathlands and upland mosaics expand.",
+      "habitats": ["blanket bog", "raised bog", "heath", "wet grassland"],
+      "keyPlants": ["Sphagnum moss", "heather", "bog myrtle", "sedges", "bog cotton", "sundew"],
+      "wildlife": ["dragonflies", "damselflies", "amphibians", "waders", "bog insects"],
+      "gardenLesson": "Add wet habitat: a fish-free pond, rain garden or damp native planting area."
+    },
+    {
+      "id": "medieval_wood_management",
+      "title": "Medieval Woods, Coppice And Wood Pasture",
+      "dateRange": "1,500-500 years ago",
+      "shortSummary": "Woodlands were increasingly managed for timber, charcoal, grazing, building and estate use.",
+      "habitats": ["coppice", "wood pasture", "hedgerow", "orchard", "ancient woodland"],
+      "keyPlants": ["oak", "hazel", "hawthorn", "holly", "ash", "fruit trees"],
+      "wildlife": ["bats", "woodland flowers", "fungi", "deadwood beetles", "birds"],
+      "gardenLesson": "Gentle management such as coppicing, hedge-laying and deadwood can create biodiversity."
+    },
+    {
+      "id": "modern_decline",
+      "title": "Modern Decline And Plantation Landscapes",
+      "dateRange": "1800-present",
+      "shortSummary": "Native woodland, bogs and meadows declined, while forestry cover later increased mostly through plantations.",
+      "habitats": ["native woodland fragments", "drained bog", "improved grassland", "plantation", "urban garden"],
+      "keyPlants": ["native trees", "Sitka spruce", "hedgerow shrubs", "garden plants"],
+      "wildlife": ["pollinators", "garden birds", "bats", "amphibians", "invertebrates"],
+      "gardenLesson": "Gardens can become habitat corridors when many small spaces connect."
+    },
+    {
+      "id": "rewilding_future",
+      "title": "Rewilding And Restoration",
+      "dateRange": "present-future",
+      "shortSummary": "Restoration projects are rebuilding peatlands, native woods, wetlands, meadows and wildlife corridors.",
+      "habitats": ["rewilded farmland", "rewetted bog", "native woodland", "wildlife garden", "pond network"],
+      "keyPlants": ["native trees", "native hedgerows", "wildflowers", "wetland plants"],
+      "wildlife": ["pollinators", "birds", "amphibians", "bats", "insects", "mammals"],
+      "gardenLesson": "Mow less, stop pesticides, add water, plant native layers and leave some places undisturbed."
+    }
+  ],
+  "caseStudies": [
+    {
+      "id": "wild_nephin",
+      "title": "Wild Nephin National Park",
+      "location": "County Mayo",
+      "summary": "A large western Irish national park protecting Atlantic blanket bog, heath, rivers, lakes and upland habitats.",
+      "lesson": "Large-scale restoration protects whole processes: water, peat, open habitat, rivers and wildlife."
+    },
+    {
+      "id": "dunsany",
+      "title": "Dunsany Nature Reserve",
+      "location": "County Meath",
+      "summary": "A private Irish estate-scale rewilding project allowing nature to recover across former managed land.",
+      "lesson": "Reduced intervention and chemical-free management can bring visible biodiversity gains."
+    },
+    {
+      "id": "knepp",
+      "title": "Knepp Wildland",
+      "location": "West Sussex, England",
+      "summary": "A major rewilding example where former farmland became a dynamic mosaic of scrub, grassland, wetland and woodland.",
+      "lesson": "Natural processes can create complex habitat faster than conventional planting plans."
+    },
+    {
+      "id": "pollinator_plan",
+      "title": "All-Ireland Pollinator Plan",
+      "location": "Island of Ireland",
+      "summary": "A practical evidence-led programme showing how gardens, schools, businesses and communities can help pollinators.",
+      "lesson": "Simple changes such as mowing less, avoiding pesticides and protecting nesting habitat scale across a landscape."
+    }
+  ]
+}
