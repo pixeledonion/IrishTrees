@@ -1,0 +1,35 @@
+[
+  {
+    "id": "wild-nephin-blanket-bog-landscape",
+    "file": "wild-nephin-blanket-bog-landscape.jpg",
+    "path": "/web-images/wild-nephin-blanket-bog-landscape.jpg",
+    "suggestedUse": "Wild Nephin case study, blanket bog and peatland rewilding sections",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Ballycroy_National_Park_from_Nephin_Beg_Range,_July2012.jpg",
+    "attributionStatus": "Verify Commons author/licence text before public launch"
+  },
+  {
+    "id": "killarney-oakwood-lakes-view",
+    "file": "killarney-oakwood-lakes-view.jpg",
+    "path": "/web-images/killarney-oakwood-lakes-view.jpg",
+    "suggestedUse": "Atlantic mixed woodland hero, Killarney case study, lake-edge woodland sections",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Ladies_view.jpg",
+    "attributionStatus": "Verify Commons author/licence text before public launch"
+  },
+  {
+    "id": "killarney-lakes-native-woodland",
+    "file": "killarney-lakes-native-woodland.jpg",
+    "path": "/web-images/killarney-lakes-native-woodland.jpg",
+    "suggestedUse": "Native woodland and lakes habitat reference",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Lakes_of_Killarney.JPG",
+    "attributionStatus": "Verify Commons author/licence text before public launch"
+  },
+  {
+    "id": "scots-pine-mature-form",
+    "file": "scots-pine-mature-form.jpg",
+    "path": "/web-images/scots-pine-mature-form.jpg",
+    "suggestedUse": "Scots pine species card or pinewood visual reference",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Skuleskogen_pine.jpg",
+    "attributionStatus": "Verify Commons author/licence text before public launch",
+    "usageNote": "Not an Irish location; use only as species morphology reference"
+  }
+]
