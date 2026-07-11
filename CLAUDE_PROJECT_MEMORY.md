@@ -104,6 +104,36 @@ Verification approach: `npx tsc -b` (clean) plus curl smoke tests against the
 running Vite dev server on `http://localhost:5173`. User prefers Claude to run the
 local dev server; do not commit until the user asks.
 
+## Deployment (GitHub Pages, project page)
+
+Live URL: **https://pixeledonion.github.io/IrishTrees/**. Repo was renamed
+`IrishTrees-test` → `IrishTrees` and made **public** so the project-page URL is
+`/IrishTrees/`.
+
+Config that makes the subpath work:
+- `vite.config.ts` → `base: '/IrishTrees/'`.
+- `src/lib/asset.ts` → `asset()` prefixes `/public` image paths with
+  `import.meta.env.BASE_URL`; used at every `<img>` (Home hero, EcosystemScene,
+  GardenScene, PeriodDetail gallery). `src/vite-env.d.ts` provides the Vite env types.
+- `main.tsx` → `<BrowserRouter basename={import.meta.env.BASE_URL}>`.
+- SPA deep links rely on a `404.html` (copy of `index.html`) in the deploy.
+
+**Deploy method: `gh-pages` branch (manual), NOT GitHub Actions.** The OAuth
+token lacks the `workflow` scope, so pushing `.github/workflows/*` to `main` is
+rejected. The workflow file exists on disk **untracked** at
+`.github/workflows/deploy.yml`; to switch to Actions-based deploys, run
+`gh auth refresh -s workflow` (interactive) then commit/push it and set Pages
+source back to "GitHub Actions" (`build_type=workflow`).
+
+**To redeploy now:**
+```bash
+npm run build && cp dist/index.html dist/404.html
+rm -rf /tmp/ghp && cp -R dist /tmp/ghp && cd /tmp/ghp && touch .nojekyll
+git init -q -b gh-pages && git add -A && git -c user.email=derricksandy@gmail.com -c user.name=pixeledonion commit -qm Deploy
+git push -f https://github.com/pixeledonion/IrishTrees.git gh-pages
+```
+Pages source is set to the `gh-pages` branch (`build_type=legacy`).
+
 ## Known Issues / Open Items
 
 - **No git commit yet.** Repo has staged files but zero commits; user wants a

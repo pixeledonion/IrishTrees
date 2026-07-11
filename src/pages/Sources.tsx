@@ -27,6 +27,16 @@ function aggregateReferences(): AggregatedRef[] {
       }
     }
   }
+  for (const s of rewildingScenes) {
+    for (const r of s.references) {
+      const existing = byId.get(r.id);
+      if (existing) {
+        existing.periods.push(s.title);
+      } else {
+        byId.set(r.id, { ...r, periods: [s.title] });
+      }
+    }
+  }
   return [...byId.values()].sort((a, b) => a.title.localeCompare(b.title));
 }
 

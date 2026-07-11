@@ -55,6 +55,16 @@ export const techniques: Technique[] = [
     ],
   },
   {
+    title: 'Keep night dark',
+    summary:
+      'Many nocturnal species rely on dark, connected routes. Reducing spill from garden lights helps bats, moths, beetles and other night-active wildlife use hedges, ponds and woodland edges.',
+    steps: [
+      'Use warm, downward-facing lights only where they are needed for safety.',
+      'Put outdoor lights on timers or motion sensors rather than leaving them on all night.',
+      'Keep hedges, ponds, old trees and flowering margins as dark as possible.',
+    ],
+  },
+  {
     title: 'Work with natural processes',
     summary:
       'Rewilding leans on nature doing the work: natural regeneration, grazing, water and decay, with light human steering rather than constant control.',
@@ -91,6 +101,30 @@ export const rewildingReferences: Reference[] = [
     source: 'The Heritage Council / Fossitt',
     url: 'https://www.npws.ie/sites/default/files/publications/pdf/A%20Guide%20to%20Habitats%20in%20Ireland%20-%20Fossitt.pdf',
     year: 2000,
+  },
+  {
+    id: 'vincent-wildlife-hedgehog',
+    title: 'Hedgehog',
+    source: 'Vincent Wildlife Trust Ireland',
+    url: 'https://www.vincentwildlife.ie/species/hedgehog',
+  },
+  {
+    id: 'vincent-wildlife-lesser-horseshoe-bat',
+    title: 'Lesser horseshoe bat',
+    source: 'Vincent Wildlife Trust Ireland',
+    url: 'https://www.vincentwildlife.ie/species/lesser-horseshoe-bat',
+  },
+  {
+    id: 'vincent-wildlife-red-squirrel',
+    title: 'Red squirrel',
+    source: 'Vincent Wildlife Trust Ireland',
+    url: 'https://www.vincentwildlife.ie/species/red-squirrel',
+  },
+  {
+    id: 'vincent-wildlife-irish-stoat',
+    title: 'Irish stoat',
+    source: 'Vincent Wildlife Trust Ireland',
+    url: 'https://www.vincentwildlife.ie/species/irish-stoat',
   },
 ];
 
@@ -142,6 +176,33 @@ export const gardenWildlife: GardenWildlife[] = [
     whereToLook: 'Connected gardens, hedge bases, leaf piles, rough grass and log piles.',
     whyItMatters: 'Needs connected habitat and safe shelter; garden barriers can isolate it.',
     helpedBy: ['Hedge gaps', 'Log piles', 'Leaf litter', 'Pesticide-free slug control'],
+  },
+  {
+    name: 'Lesser horseshoe bat',
+    latin: 'Rhinolophus hipposideros',
+    kind: 'mammal',
+    whereToLook: 'Dark hedgerows, woodland edges, old buildings and sheltered lanes in western counties.',
+    whyItMatters:
+      'A sensitive night hunter that depends on connected tree lines, hedges, watercourses and low light levels.',
+    helpedBy: ['Dark corridors', 'Native hedge', 'Pond insects', 'No pesticides', 'Old stone buildings'],
+  },
+  {
+    name: 'Red squirrel',
+    latin: 'Sciurus vulgaris',
+    kind: 'mammal',
+    whereToLook: 'Woodland-edge gardens, hazel, pine, oak and larger connected tree cover.',
+    whyItMatters:
+      'A native tree specialist that benefits where mature woodland structure, seed trees and safe canopy links return.',
+    helpedBy: ['Native seed trees', 'Connected canopy', 'Hazel', 'Scots pine', 'Low-disturbance woodland edge'],
+  },
+  {
+    name: 'Irish stoat',
+    latin: 'Mustela erminea hibernica',
+    kind: 'mammal',
+    whereToLook: 'Dense hedges, stone walls, scrub edges and rough grass with enough cover and prey.',
+    whyItMatters:
+      'A native predator of the small-mammal food web, using linear cover to move through farm and garden landscapes.',
+    helpedBy: ['Native hedge', 'Stone wall cover', 'Rough grass', 'No rodenticide', 'Connected habitat'],
   },
   {
     name: 'Robin',
@@ -202,14 +263,14 @@ export const rewildingScenes: RewildingScene[] = [
       },
     ],
     expectedWildlife: gardenWildlife.filter((item) =>
-      ['Garden bumblebees', 'Hoverflies', 'Robin', 'Woodlice, beetles and fungi'].includes(item.name),
+      ['Garden bumblebees', 'Hoverflies', 'Robin', 'Red squirrel', 'Woodlice, beetles and fungi'].includes(item.name),
     ),
     actions: [
       'Plant one native tree that suits your soil and future space.',
       'Add two or three native shrubs instead of a hard ornamental boundary.',
       'Keep a narrow path mown if needed, but let the sides grow taller.',
     ],
-    references: [rewildingReferences[0], rewildingReferences[3]],
+    references: [rewildingReferences[0], rewildingReferences[3], rewildingReferences[6]],
   },
   {
     id: 'fish-free-pond',
@@ -252,14 +313,14 @@ export const rewildingScenes: RewildingScene[] = [
       },
     ],
     expectedWildlife: gardenWildlife.filter((item) =>
-      ['Common frog', 'Blue-tailed damselfly', 'Hoverflies'].includes(item.name),
+      ['Common frog', 'Blue-tailed damselfly', 'Hoverflies', 'Lesser horseshoe bat'].includes(item.name),
     ),
     actions: [
       'Create one shallow area and one deeper refuge if space allows.',
       'Use rainwater where possible and avoid adding fish.',
       'Plant native pond margins and leave nearby long grass for shelter.',
     ],
-    references: [rewildingReferences[0], rewildingReferences[3]],
+    references: [rewildingReferences[0], rewildingReferences[3], rewildingReferences[5]],
   },
   {
     id: 'deadwood-and-decay',
@@ -302,14 +363,14 @@ export const rewildingScenes: RewildingScene[] = [
       },
     ],
     expectedWildlife: gardenWildlife.filter((item) =>
-      ['Woodlice, beetles and fungi', 'Common frog', 'Robin', 'Hedgehog'].includes(item.name),
+      ['Woodlice, beetles and fungi', 'Common frog', 'Robin', 'Hedgehog', 'Irish stoat'].includes(item.name),
     ),
     actions: [
       'Stack untreated logs in a shady corner.',
       'Leave some leaves under shrubs instead of bagging them.',
       'Keep a few hollow stems standing through winter.',
     ],
-    references: [rewildingReferences[0], rewildingReferences[3]],
+    references: [rewildingReferences[0], rewildingReferences[3], rewildingReferences[4], rewildingReferences[7]],
   },
   {
     id: 'pollinator-corridor',
@@ -352,14 +413,14 @@ export const rewildingScenes: RewildingScene[] = [
       },
     ],
     expectedWildlife: gardenWildlife.filter((item) =>
-      ['Garden bumblebees', 'Hoverflies', 'Small tortoiseshell', 'Hedgehog', 'Robin'].includes(item.name),
+      ['Garden bumblebees', 'Hoverflies', 'Small tortoiseshell', 'Hedgehog', 'Lesser horseshoe bat', 'Irish stoat', 'Robin'].includes(item.name),
     ),
     actions: [
       'Leave a strip unmown until late summer and remove the cuttings.',
       'Plant or thicken a native hedge with hawthorn, blackthorn, willow and bramble.',
       'Avoid pesticides and leave a safe ground-level wildlife gap where appropriate.',
     ],
-    references: [rewildingReferences[0], rewildingReferences[1]],
+    references: [rewildingReferences[0], rewildingReferences[1], rewildingReferences[4], rewildingReferences[5], rewildingReferences[7]],
   },
 ];
 
@@ -380,6 +441,24 @@ export const successStories: SuccessStory[] = [
     summary:
       'A native predator has recovered across parts of Ireland after severe historic decline. Its return is linked in many areas with better prospects for red squirrels, because pine martens can suppress grey squirrel numbers.',
     url: 'https://www.vincentwildlife.ie/species/pine-marten',
+    status: 'published',
+  },
+  {
+    name: 'Irish Stoat Citizen Science Survey',
+    location: 'Island of Ireland',
+    scale: 'Species monitoring',
+    summary:
+      'A public sightings project gathered new records for a native subspecies that is often overlooked or misidentified. It shows how ordinary observations can fill major knowledge gaps for elusive mammals.',
+    url: 'https://www.vincentwildlife.ie/species/irish-stoat',
+    status: 'published',
+  },
+  {
+    name: 'Lesser horseshoe bat roost network',
+    location: 'Western Ireland',
+    scale: 'Roosts and corridors',
+    summary:
+      'Conservation work for this western bat links secure roosts with darker, insect-rich hedgerows, woodlands and watercourses — a useful model for garden and farm-scale connectivity.',
+    url: 'https://www.vincentwildlife.ie/species/lesser-horseshoe-bat',
     status: 'published',
   },
   {

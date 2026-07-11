@@ -3,9 +3,9 @@
 export const SITE = {
   name: 'The Irish Wildwood',
   short: 'Wildwood',
-  tagline: 'Ireland’s native ecosystems, from 8,000 years ago to your back garden.',
+  tagline: 'Ireland’s native ecosystems, from 14,000 years ago to your back garden.',
   description:
-    'Explore how Ireland’s wild habitats changed across 8,000 years — and how to rebuild fragments of them through rewilding.',
+    'Explore how Ireland’s wild habitats changed across 14,000 years — and how to rebuild fragments of them through rewilding.',
   contextSource: 'https://chatgpt.com/share/6a512fc0-cb4c-83eb-a9f9-eb7b646c6b64',
 };
 

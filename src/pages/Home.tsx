@@ -20,7 +20,7 @@ export function Home() {
           <div className="hero__scrim" aria-hidden="true" />
         </div>
         <div className="hero__body">
-          <p className="eyebrow">Eight thousand years · one island</p>
+          <p className="eyebrow">Fourteen thousand years · one island</p>
           <h1>{SITE.tagline}</h1>
           <p className="lead">{SITE.description}</p>
           <div className="hero__actions">
@@ -45,7 +45,7 @@ export function Home() {
             <h3>See the change over time</h3>
             <p>
               From tundra to pinewood to bog, Ireland’s habitats shifted with the
-              climate. A scrollable timeline makes 8,000 years easy to grasp.
+              climate. A scrollable timeline makes 14,000 years easy to grasp.
             </p>
           </article>
           <article className="feature" data-reveal>

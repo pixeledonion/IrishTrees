@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import type { Period } from '../content/types';
 import { asset } from '../lib/asset';
 import { ImageAttribution } from './ImageAttribution';
+import { SpeciesIcon, iconForSpecies, type IconName } from './SpeciesIcon';
 
 interface Hotspot {
   id: string;
@@ -10,6 +11,7 @@ interface Hotspot {
   body: string;
   x: number;
   y: number;
+  icon: IconName;
 }
 
 const fallbackScenes = [
@@ -34,6 +36,11 @@ function buildHotspots(period: Period): Hotspot[] {
     ['bird', 'mammal', 'insect', 'amphibian', 'other'].includes(item.kind),
   );
 
+  const habitatName = (firstHabitat?.name ?? '').toLowerCase();
+  const watery = /pool|pond|bog|water|wet|carr|melt|marsh|lake/.test(habitatName);
+  const rep = animalLife[0];
+  const plantRep = plantLife[0];
+
   return [
     {
       id: 'landscape',
@@ -42,6 +49,7 @@ function buildHotspots(period: Period): Hotspot[] {
       body: firstHabitat?.description ?? period.environment,
       x: 23,
       y: 63,
+      icon: watery ? 'water' : 'hill',
     },
     {
       id: 'plants',
@@ -50,6 +58,7 @@ function buildHotspots(period: Period): Hotspot[] {
       body: plantLife[0]?.note ?? period.environment,
       x: 54,
       y: 38,
+      icon: plantRep ? iconForSpecies(plantRep) : 'leaf',
     },
     {
       id: 'wildlife',
@@ -58,6 +67,7 @@ function buildHotspots(period: Period): Hotspot[] {
       body: animalLife[0]?.note ?? period.climate,
       x: 77,
       y: 58,
+      icon: rep ? iconForSpecies(rep) : 'paw',
     },
   ];
 }
@@ -66,17 +76,23 @@ interface EcosystemSceneProps {
   period: Period;
   index?: number;
   compact?: boolean;
+  /** Full-bleed, full-height variant used on the timeline page. */
+  full?: boolean;
 }
 
-export function EcosystemScene({ period, index = 0, compact = false }: EcosystemSceneProps) {
+export function EcosystemScene({ period, index = 0, compact = false, full = false }: EcosystemSceneProps) {
   const hotspots = useMemo(() => buildHotspots(period), [period]);
   const [activeId, setActiveId] = useState(hotspots[0]?.id ?? '');
   const active = hotspots.find((item) => item.id === activeId) ?? hotspots[0];
   const image = getSceneImage(period, index);
   const meta = period.keyImage;
 
+  const className = ['scene', compact && 'scene--compact', full && 'scene--full']
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div className={compact ? 'scene scene--compact' : 'scene'}>
+    <div className={className}>
       <img
         className="scene__image"
         src={asset(image)}
@@ -105,14 +121,21 @@ export function EcosystemScene({ period, index = 0, compact = false }: Ecosystem
           onClick={() => setActiveId(spot.id)}
         >
           <span className="scene__pulse" aria-hidden="true" />
-          <span className="scene__dot" aria-hidden="true" />
+          <span className="scene__marker" aria-hidden="true">
+            <SpeciesIcon name={spot.icon} />
+          </span>
         </button>
       ))}
       {active && (
         <article className="scene__card" aria-live="polite">
-          <p className="scene__kicker">{active.label}</p>
-          <h3>{active.title}</h3>
-          <p>{active.body}</p>
+          <span className="scene__cardIcon" aria-hidden="true">
+            <SpeciesIcon name={active.icon} />
+          </span>
+          <div className="scene__cardText">
+            <p className="scene__kicker">{active.label}</p>
+            <h3>{active.title}</h3>
+            <p>{active.body}</p>
+          </div>
         </article>
       )}
     </div>

@@ -6,6 +6,16 @@ import type {
 } from '../content/types';
 import { asset } from '../lib/asset';
 import { ImageAttribution } from './ImageAttribution';
+import { SpeciesIcon, type IconName } from './SpeciesIcon';
+
+const CATEGORY_ICON: Record<HotspotCategory, IconName> = {
+  landscape: 'hill',
+  plants: 'leaf',
+  wildlife: 'paw',
+  water: 'water',
+  climate: 'water',
+  people: 'paw',
+};
 
 const CATEGORY_COLOR: Record<HotspotCategory, string> = {
   landscape: '#9ec473',
@@ -84,7 +94,9 @@ export function GardenScene({ scene }: { scene: RewildingScene }) {
             onClick={() => setActiveHotspot(h.id)}
           >
             <span className="scene__pulse" aria-hidden="true" />
-            <span className="scene__dot" aria-hidden="true" />
+            <span className="scene__marker" aria-hidden="true">
+              <SpeciesIcon name={CATEGORY_ICON[h.category]} />
+            </span>
           </button>
         ))}
         {hotspot && (
@@ -93,9 +105,14 @@ export function GardenScene({ scene }: { scene: RewildingScene }) {
             aria-live="polite"
             style={{ '--accent': CATEGORY_COLOR[hotspot.category] } as React.CSSProperties}
           >
-            <p className="scene__kicker">{CATEGORY_LABEL[hotspot.category]}</p>
-            <h3>{hotspot.title}</h3>
-            <p>{hotspot.body}</p>
+            <span className="scene__cardIcon" aria-hidden="true">
+              <SpeciesIcon name={CATEGORY_ICON[hotspot.category]} />
+            </span>
+            <div className="scene__cardText">
+              <p className="scene__kicker">{CATEGORY_LABEL[hotspot.category]}</p>
+              <h3>{hotspot.title}</h3>
+              <p>{hotspot.body}</p>
+            </div>
           </article>
         )}
       </div>
